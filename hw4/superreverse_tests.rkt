@@ -5,6 +5,10 @@
 
 
 ; student tests
+(check-equal? (superreverse '((a b) (c d))) '((b a) (d c)))
+(check-equal? (superreverse '((a))) '((a)))
+(check-equal? (superreverse '(())) '(()))
+(check-equal? (superreverse '()) '())
 
 
 ; provided tests

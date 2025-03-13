@@ -11,5 +11,4 @@
 ;;           (and returns false if the input is less than or 
 ;;           equal to low or is greater than or equal to high)
 (define (make-range-predicate low high)
-  +)
-
+  (lambda (x) (and (> (- x low) 0) (> (- high x) 0))))

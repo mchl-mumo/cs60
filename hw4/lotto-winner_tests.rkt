@@ -21,7 +21,19 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ; student tests
+(check-equal? (lotto-winner
+               '((mike 5 7 8 9 1)
+                 (aron 5 7 8 9 1)
+                 (paul 5 7 8 9 1))
+               '(5 7 8 9 1) )
+              '(mike 5))
 
+(check-equal? (lotto-winner
+               '((mike 5 7 8 9 1)
+                 (aron 5 7 8 9 1)
+                 (paul 5 7 8 9 1))
+               '(10 11 12 13 14) )
+              '())
 
 ; provided tests
 (check-equal? (lotto-winner

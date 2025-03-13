@@ -3,10 +3,9 @@
 (provide superreverse)
 
 
-;; superreverse: TODO: delete this note and complete the comment
-;;   input:  TODO: delete this note and complete the comment
-;;   output: TODO: delete this note and complete the comment
-;; Use higher-order functions (no recursion!)
+;; superreverse: reverses the top level lists in a list of lists
+;;   input:  a list of lists, L
+;;   output: list of lists containing reversed top level lists of L
 (define (superreverse L)
-  0)
+  (map reverse L))
 

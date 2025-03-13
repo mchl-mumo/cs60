@@ -4,6 +4,14 @@
 (require "range.rkt")
 
 
+; student definitions calling make-range-predicate
+(define value1to10? (make-range-predicate 10 11))
+
+; student test cases for make-range-predicate
+(check-equal? (value1to10? 10)  false)
+(check-equal? (value1to10? 11)  false)
+
+
 ; provided definitions calling make-range-predicate
 (define value1to3?   (make-range-predicate 0 4))
 (define value1to100? (make-range-predicate 0 101))

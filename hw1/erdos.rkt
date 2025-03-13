@@ -10,13 +10,17 @@
 ;;   output: 3N+1, if N is odd
 ;;           N/2, if N is even
 (define (erdos N)
-  ; NOTE: STOP - Do not write code here until you have written tests! 
-  ; NOTE: Delete this and the note above when you start writing code.
-  10000)
+  (if (odd? N)
+      (+ (* N 3) 1)
+      (quotient N 2)))
 
-; Note: Delete this note and write a comment for erdos-count
+
+; erdos-count: the "erdos-count" function
+; input: a positive integer N
+; output: integer of smallest number of times erdos should be applied to N to get 1
 (define (erdos-count N)
-  ; NOTE: STOP - Do not write code here until you have written tests! 
-  ; NOTE: Delete this and the note above when you start writing code.
-  20000000)
+  (if (= N 1)
+      0
+      (+ 1 (erdos-count (erdos N)))))
+
 

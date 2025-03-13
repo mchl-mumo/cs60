@@ -18,7 +18,13 @@ public class Recursion {
 	 * @return (n choose k)
 	 */
 	public static int choose(int n, int k) {
+		if (n == k) {
+			return 1;
+		} else {
+			return (choose(n-1, k) * n) / (n-k);
+		}
 	}
+
 
 	public static void main(String[] args) {
 		// You can add debugging statements here to test your methods!

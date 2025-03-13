@@ -106,8 +106,7 @@ public class Complex {
 	 * @return The magnitude of this complex number
 	 */
 	public double magnitude() {
-		// TODO: Implement magnitude
-		return 0.0;
+		return Math.sqrt(real * real + imag * imag);
 	}
 
 	/**
@@ -119,15 +118,15 @@ public class Complex {
 	 * @return A new complex object that is the negation of this complex number
 	 */
 	public Complex negate() {
-		// TODO: Implement negate
-		return null;
+		return new Complex(-1 * real, -1 * imag);
 	}
 
 	/**
 	 * Destructively negates this complex number.
 	 */
 	public void negateDest() {
-		// TODO: Implement negateDest
+		this.setReal(real * -1);
+		this.setImag(imag * -1);
 	}
 
 	/**
@@ -139,15 +138,14 @@ public class Complex {
 	 * @return A new complex object that is the conjugate of this complex number
 	 */
 	public Complex conjugate() {
-		// TODO: Implement conjugate
-		return null;
+		return new Complex(real, imag * -1);
 	}
 
 	/**
 	 * Destructively conjugates this complex number.
 	 */
 	public void conjugateDest() {
-		// TODO: Implement conjugateDest
+		this.setImag(imag * -1);
 	}
 
 	/**
@@ -161,8 +159,7 @@ public class Complex {
 	 *         other complex number
 	 */
 	public Complex add(Complex other) {
-		// TODO: Implement add
-		return null;
+		return new Complex(this.real + other.real, this.imag + other.imag);
 	}
 
 	/**
@@ -172,7 +169,8 @@ public class Complex {
 	 * @param other - The other complex object
 	 */
 	public void addDest(Complex other) {
-		// TODO: Implement addDest
+		this.setReal(this.real + other.real);
+		this.setImag(this.imag + other.imag);
 	}
 
 	/**
@@ -186,8 +184,7 @@ public class Complex {
 	 *         the other complex number
 	 */
 	public Complex multiply(Complex other) {
-		// TODO: Implement multiply
-		return null;
+		return new Complex((this.real * other.real) - (this.imag * other.imag), (this.real * other.imag) + (this.imag * other.real));
 	}
 
 	/**
@@ -226,7 +223,11 @@ public class Complex {
 	 *         other complex number
 	 */
 	public Complex divide(Complex other) {
-		// TODO: Implement divide
-		return null;
+		double a = this.real;
+		double b = this.imag;
+		double c = other.real;
+		double d = other.imag;
+
+		return new Complex(((a * c) + (b * d))/((c * c) + (d * d)), ((b * c) - (a * d))/((c * c) + (d * d)));
 	}
 }
